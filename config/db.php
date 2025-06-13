@@ -1,11 +1,11 @@
 <?php
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'auth_system');
+define('DB_NAME', 'login');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 
-$dns = "mysql:host=" .  DB_HOST . ";dbname=" .DB_NAME . ";charset=utf8mb4"
+$dsn = "mysql:host=" .  DB_HOST . ";dbname=" .DB_NAME . ";charset=utf8mb4";
 
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -14,12 +14,12 @@ $options = [
 ];
 
 try {
-    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options)
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
 } catch(PDOException $e) {
     header('Content-Type: application/json');
     echo json_encode([
-      'stastus' => 'error',
-      'massage' => 'Database connection failed: ' .$e->getMessage()  
+      'status' => 'error',
+      'message' => 'Database connection failed: ' .$e->getMessage()  
     ]);
     exit;
 }

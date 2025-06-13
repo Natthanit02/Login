@@ -35,24 +35,24 @@ $(document).ready(function() {
 
         console.log(formData);
 
-        // $.ajax({
-        //     type: 'POST',
-        //     url: 'api/register.php',
-        //     data: formData,
-        //     dataType: 'json',
-        //     success(response) {
-        //         if (response.status === 'success') {
-        //             displayMessage(response.message, 'success');
-        //             $('#registerForm')[0].reset();
-        //         } else {
-        //             displayMessage(response.message, 'danger');
-        //         }
-        //     },
-        //     error(xhr, status, error) {
-        //         console.error('AJAX Error:', status, error, xhr.responseText);
-        //         displayMessage('An error occurred while sending data: '+ error + ' please check your console', 'danger');
-        //     }
-        // })
+        $.ajax({
+            type: 'POST',
+            url: 'api/register.php',
+            data: formData,
+            dataType: 'json',
+            success(response) {
+                if (response.status === 'success') {
+                    displayMessage(response.message, 'success');
+                    $('#registerForm')[0].reset();
+                } else {
+                    displayMessage(response.message, 'danger');
+                }
+            },
+            error(xhr, status, error) {
+                console.error('AJAX Error:', status, error, xhr.responseText);
+                displayMessage('An error occurred while sending data: '+ error + ' please check your console', 'danger');
+            }
+        })
     })
 
     function displayMessage(message, type){
