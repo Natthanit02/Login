@@ -19,14 +19,14 @@
                     <div class="card-body">
                         <div id="login-message-area" class="mb-3"></div>
 
-                        <form id="loginFrom">
+                        <form id="loginForm">
                             <div class="mb-3">
                                 <label for="Username" class="form-label">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" required>
                             </div>
                              <div class="mb-3">
                                 <label for="Password" class="form-label">Password</label>
-                                <input type="Password" class="form-control" id="password" name="password" required>
+                                <input type="password" class="form-control" id="password" name="password" required>
                             </div>
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-success">Sing In</button>
@@ -42,5 +42,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
