@@ -98,6 +98,27 @@ $(document).ready(function() {
         })
     })
 
+    // logout Hanler
+    $('#logoutButton').on('click', function(e){
+        e.preventDefault();
+
+        $.ajax({
+            type: 'POST',
+            url: 'api/logout.php',
+            dataType: 'json',
+            success(response) {
+                if(response.status == 'success') {
+                    window.location.href = 'login.html'
+                }
+            },
+            error (xhr, status, error) {
+                console.error('AJAX logout error', status, error, xhr.responseText);
+            }
+        })
+    })
+
+
+    // Function to display message in the message-area
     function displayMessage(message, type){
         $('#message-area').html(
             `<div class='alert alert-${type} alert-dismissible fade show' role='alert'>
